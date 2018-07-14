@@ -1,0 +1,31 @@
+Documentation:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+    - "*.gemspec"
+
+Metrics/LineLength:
+  Max: 120
+
+Style/WordArray:
+  EnforcedStyle: brackets
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false

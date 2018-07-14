@@ -9,9 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Airat Shigapov"]
   spec.email         = ["hi@airat.sh"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Chat Bot Framework for Ruby}
+  spec.homepage      = "https://github.com/airatdev/botpack"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -28,11 +27,19 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.bindir        = "bin"
   spec.require_paths = ["lib"]
+  spec.executables   = ["botpack"]
+
+  spec.add_dependency "dotenv", "2.4.0"
+  spec.add_dependency "telegram-bot-ruby", "0.8.6.1"
+  spec.add_dependency "unicode", "0.4.4.4"
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "coveralls", "0.8.21"
+  spec.add_development_dependency "rspec", "3.6.0"
+  spec.add_development_dependency "rubocop", "0.58.1"
+  spec.add_development_dependency "rubocop-rspec", "1.15.1"
+  spec.add_development_dependency "byebug", "9.0.6"
 end
