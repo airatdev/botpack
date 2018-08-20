@@ -1,5 +1,4 @@
-
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "botpack/version"
 
@@ -9,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Airat Shigapov"]
   spec.email         = ["hi@airat.sh"]
 
-  spec.summary       = %q{Chat Bot Framework for Ruby}
+  spec.summary       = "Chat Bot Framework for Ruby"
   spec.homepage      = "https://github.com/airatdev/botpack"
   spec.license       = "MIT"
 
@@ -24,7 +23,7 @@ Gem::Specification.new do |spec|
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
   spec.bindir        = "bin"
@@ -36,10 +35,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "unicode", "0.4.4.4"
 
   spec.add_development_dependency "bundler", "~> 1.16"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "byebug", "9.0.6"
   spec.add_development_dependency "coveralls", "0.8.21"
+  spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "3.6.0"
   spec.add_development_dependency "rubocop", "0.58.1"
   spec.add_development_dependency "rubocop-rspec", "1.15.1"
-  spec.add_development_dependency "byebug", "9.0.6"
 end
